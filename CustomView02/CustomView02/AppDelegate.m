@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ProgressView.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+//    [ProgressView appearance].squareColor = [UIColor greenColor];
+
     return YES;
 }
 

@@ -13,4 +13,6 @@ IB_DESIGNABLE
 
 @property (nonatomic) IBInspectable float progress;
 
+@property (nonatomic, copy) UIColor *squareColor UI_APPEARANCE_SELECTOR;
+
 @end

@@ -30,6 +30,9 @@
 
 - (IBAction)add:(id)sender {
     ProgressView *progressView = [[ProgressView alloc] initWithFrame:[self randomProgressViewFrame]];
+
+//    progressView.squareColor = [UIColor redColor];
+
     [progressView addTarget:self action:@selector(stop:) forControlEvents:UIControlEventTouchUpInside];
     [self.view insertSubview:progressView belowSubview:self.addButton];
     _progressView = progressView;

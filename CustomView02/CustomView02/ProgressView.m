@@ -63,6 +63,11 @@
     [self setNeedsDisplay];
 }
 
+- (void)setSquareColor:(UIColor *)squareColor {
+    _squareColor = [squareColor copy];
+    [self setNeedsDisplay];
+}
+
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
 
@@ -91,7 +96,7 @@
     CGFloat side = diameter * 2.f / 5.f;
     CGContextTranslateCTM(context, -side/2.f, -side/2.f);
     CGContextAddRect(context, CGRectMake(0.f, 0.f, side, side));
-    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextSetFillColorWithColor(context, (self.squareColor ?: color).CGColor);
     CGContextFillPath(context);
 }
 
