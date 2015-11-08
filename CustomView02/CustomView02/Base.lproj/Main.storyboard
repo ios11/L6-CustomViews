@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--drawRect:-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="DrawRectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-IW-tdW">
+                                <rect key="frame" x="266" y="513" width="69" height="30"/>
+                                <state key="normal" title="Добавить"/>
+                                <connections>
+                                    <action selector="add:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ROM-Hi-XFZ"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-Jp-sGp">
+                                <rect key="frame" x="18" y="475" width="564" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="bCI-AS-ZWP"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-22-EE3" customClass="ProgressView">
+                                <rect key="frame" x="95" y="116" width="32" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.33000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fjN-Jp-sGp" secondAttribute="trailing" id="3HY-Q6-z4S"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fjN-Jp-sGp" secondAttribute="leading" id="D8W-0F-t2k"/>
+                            <constraint firstItem="qbG-IW-tdW" firstAttribute="top" secondItem="fjN-Jp-sGp" secondAttribute="bottom" constant="8" id="FJG-KS-Wtc"/>
+                            <constraint firstItem="qbG-IW-tdW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="aMQ-kn-Hwx"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="qbG-IW-tdW" secondAttribute="bottom" constant="8" symbolic="YES" id="oCB-Bs-mtC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="drawRect:" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="addButton" destination="qbG-IW-tdW" id="egR-Hh-AwV"/>
+                        <outlet property="slider" destination="fjN-Jp-sGp" id="OnF-tQ-P3f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--CAShapeLayer-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="ShapeLayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3k-Lm-fPE" customClass="ShapeProgressView">
+                                <rect key="frame" x="118" y="115" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="stop:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Rnr-DP-MRo"/>
+                                </connections>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-Qb-4gJ">
+                                <rect key="frame" x="18" y="475" width="564" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="7XO-ws-L7s"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH6-3O-uuB">
+                                <rect key="frame" x="255" y="513" width="91" height="30"/>
+                                <state key="normal" title="Новый frame"/>
+                                <connections>
+                                    <action selector="newFrame:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PaZ-S8-NIb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="HH6-3O-uuB" secondAttribute="bottom" constant="8" id="2rz-9c-Dr2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gYG-Qb-4gJ" secondAttribute="trailing" id="eHL-Nu-R7x"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="gYG-Qb-4gJ" secondAttribute="leading" id="efX-Dq-kXJ"/>
+                            <constraint firstItem="HH6-3O-uuB" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="iKA-Cq-w7D"/>
+                            <constraint firstItem="HH6-3O-uuB" firstAttribute="top" secondItem="gYG-Qb-4gJ" secondAttribute="bottom" constant="8" id="mH1-LQ-1kk"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="CAShapeLayer" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="addButton" destination="HH6-3O-uuB" id="PM0-8s-3hZ"/>
+                        <outlet property="progressView" destination="b3k-Lm-fPE" id="JBj-ih-Vuv"/>
+                        <outlet property="slider" destination="gYG-Qb-4gJ" id="udT-dt-zRJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>
