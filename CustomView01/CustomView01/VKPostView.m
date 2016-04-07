@@ -11,9 +11,10 @@
 @implementation VKPostView
 
 + (instancetype)loadFromNib {
-    return [[[NSBundle bundleForClass:[self class]]
-             loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil]
-            firstObject];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *nibName = @"VKPostView";
+    NSArray *nibObjects = [bundle loadNibNamed:nibName owner:nil options:nil];
+    return nibObjects.firstObject;
 }
 
 - (void)awakeFromNib {
